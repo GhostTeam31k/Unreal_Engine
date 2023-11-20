@@ -29,6 +29,7 @@ public:
 
 };
 
+// compare []'무명함수' int~~람다함수
 bool compaere(const NHR& LHS, const NHR& RHS)
 {
 	if (LHS.Money > RHS.Money)
@@ -52,7 +53,10 @@ int main()
 	NHRS.push_back(NHR(40));
 	NHRS.push_back(NHR(50));
 	//sort(NHRS.begin(), NHRS.end(), greater<NHR>()); // greater = 큰것부터 , less = 작은것부터 정렬
-	sort(NHRS.begin(), NHRS.end(), compaere);
+	sort(NHRS.begin(), NHRS.end(), [](const NHR& LHS, const NHR& RHS)
+		{
+			return LHS.Money > RHS.Money;
+		});
 
 	for (const auto& Data : NHRS)
 	{
