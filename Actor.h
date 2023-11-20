@@ -20,5 +20,7 @@ public:
 protected:
 	int X;
 	int Y;
+
+	char Shape;
 };
 
